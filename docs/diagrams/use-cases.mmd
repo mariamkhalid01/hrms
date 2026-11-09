@@ -1,0 +1,24 @@
+flowchart LR
+    Analyst["HR or business analyst"]
+    Specialist["Improvement specialist"]
+    Researcher["Researcher or developer"]
+    subgraph Platform["Platform"]
+        Upload(["Upload and preview event log"])
+        Prepare(["Map, validate and confirm"])
+        Discover(["Discover separate processes"])
+        Explore(["Explore performance and paths"])
+        Cases(["Inspect case histories"])
+        Findings(["Review bottleneck evidence"])
+        Actions(["Review improvement actions"])
+        Verify(["Check service and test results"])
+    end
+    Analyst --> Upload
+    Analyst --> Prepare
+    Analyst --> Discover
+    Analyst --> Explore
+    Analyst --> Cases
+    Specialist --> Findings
+    Specialist --> Actions
+    Analyst --> Findings
+    Researcher --> Upload
+    Researcher --> Verify

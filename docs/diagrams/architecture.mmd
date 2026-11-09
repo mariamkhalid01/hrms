@@ -1,0 +1,24 @@
+flowchart TB
+    user["Analyst"]
+
+        ui["React frontend<br/>Navigation, upload and mapping"]
+        state["Dataset and analysis state"]
+        views["Dashboards, React Flow and detail dialogs"]
+        ui --> state --> views
+    api["FastAPI REST API<br/>Typed contracts and error handling"]
+    jobs["Orchestration<br/>Background jobs and current-result reads"]
+
+        prep["Python preparation services<br/>CSV inspection, validation<br/>Normalization and partitioning"]
+        mine["PM4Py discovery<br/>DFG, variants and eligible Inductive model"]
+        analysis["Performance analytics<br/>Evidence rules and recommendations"]
+        prep --> mine --> analysis
+    store[("Local source, normalized data<br/>Results and job status files")]
+    user --> ui
+    state <-->|"REST client and job polling"| api
+    views <-->|"JSON results and details"| api
+    api --> jobs
+    jobs --> prep
+    jobs --> store
+    prep --> store
+    analysis --> store
+

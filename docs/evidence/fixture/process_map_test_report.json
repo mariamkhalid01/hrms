@@ -1,0 +1,31 @@
+{
+  "passed": 25,
+  "checks": {
+    "no_permanent_side_inspector": true,
+    "advanced_controls_hidden_initially": true,
+    "Leave Management_actual_common_path": true,
+    "Leave Management_coverage": true,
+    "Onboarding_actual_common_path": true,
+    "Onboarding_coverage": true,
+    "Payroll_actual_common_path": true,
+    "Payroll_coverage": true,
+    "Recruitment_actual_common_path": true,
+    "Recruitment_coverage": true,
+    "readable_desktop_tasks": true,
+    "diagram_starts_early": true,
+    "step_opens_modal": true,
+    "step_evidence_available": true,
+    "escape_closes_details": true,
+    "timing_mode_labels": true,
+    "repeat_mode_labels": true,
+    "counts_optional": true,
+    "all_actual_steps": true,
+    "all_actual_connections": true,
+    "filter_actual_routes": true,
+    "fit_available": true,
+    "mobile_no_page_overflow": true,
+    "mobile_tasks_readable": true,
+    "no_javascript_errors": true
+  },
+  "errors": []
+}

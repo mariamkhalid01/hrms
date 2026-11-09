@@ -1,0 +1,162 @@
+{
+  "passed": true,
+  "checks_passed": 4702,
+  "dataset_id": "cbd64c13-9b05-42e0-86d2-c0cd2fba1a12",
+  "source_sha256": "96a28dc8c33779d1cf530c436741019256e08b411fd097f113514abd782bdcf4",
+  "source_file": "C:\\Users\\SG5\\Documents\\Codex\\2026-11-09\\files-pasted-by-the-user-project\\outputs\\synthetic_hr_dataset_v2\\event_log.csv",
+  "discovery_analysis_id": "9d0a89fd-9a5c-4ebe-bbad-f14bd0b3a735",
+  "analytics_analysis_id": "1eb3ca07-aa8c-4b32-9e70-399aa8c9e334",
+  "event_count": 4700,
+  "case_count": 500,
+  "process_count": 4,
+  "case_status_configuration": {
+    "attribute": "case_status",
+    "values": {
+      "Completed": "completed",
+      "Rejected": "completed",
+      "Incomplete": "incomplete",
+      "Cancelled": "cancelled"
+    }
+  },
+  "processes": [
+    {
+      "process": "Leave Management",
+      "cases": 150,
+      "events": 953,
+      "activities": 12,
+      "transitions": 14,
+      "variants": 7,
+      "repeated_cases": 9,
+      "variants_with_at_least_5_cases": 4,
+      "cases_on_variants_with_at_least_5_cases": 145,
+      "largest_variant_cases": 90,
+      "case_status_counts": {
+        "completed": 147,
+        "incomplete": 2,
+        "cancelled": 1
+      },
+      "mean_case_duration_days": 1.9465138888888887,
+      "median_case_duration_days": 0.9388888888888889,
+      "mean_wait_calendar_hours": 8.540161892901619,
+      "median_wait_calendar_hours": 0.7,
+      "measured_interval_pairs": 803,
+      "approximate_interval_pairs": 0,
+      "overlapping_interval_pairs": 0,
+      "findings": 16,
+      "findings_by_category": {
+        "long_processing": 1,
+        "long_waiting": 8,
+        "delayed_cases": 1,
+        "workload_imbalance": 6
+      }
+    },
+    {
+      "process": "Onboarding",
+      "cases": 100,
+      "events": 1092,
+      "activities": 16,
+      "transitions": 21,
+      "variants": 16,
+      "repeated_cases": 11,
+      "variants_with_at_least_5_cases": 6,
+      "cases_on_variants_with_at_least_5_cases": 82,
+      "largest_variant_cases": 29,
+      "case_status_counts": {
+        "completed": 97,
+        "incomplete": 3
+      },
+      "mean_case_duration_days": 10.484194444444444,
+      "median_case_duration_days": 10.150347222222223,
+      "mean_wait_calendar_hours": 24.70112567204301,
+      "median_wait_calendar_hours": 18.716666666666665,
+      "measured_interval_pairs": 992,
+      "approximate_interval_pairs": 0,
+      "overlapping_interval_pairs": 0,
+      "findings": 16,
+      "findings_by_category": {
+        "long_processing": 1,
+        "long_waiting": 13,
+        "repeated_activity": 1,
+        "delayed_cases": 1
+      }
+    },
+    {
+      "process": "Payroll",
+      "cases": 150,
+      "events": 1400,
+      "activities": 13,
+      "transitions": 15,
+      "variants": 6,
+      "repeated_cases": 15,
+      "variants_with_at_least_5_cases": 4,
+      "cases_on_variants_with_at_least_5_cases": 147,
+      "largest_variant_cases": 127,
+      "case_status_counts": {
+        "completed": 147,
+        "incomplete": 3
+      },
+      "mean_case_duration_days": 10.762578703703705,
+      "median_case_duration_days": 10.936805555555555,
+      "mean_wait_calendar_hours": 30.321386666666665,
+      "median_wait_calendar_hours": 2.9,
+      "measured_interval_pairs": 1250,
+      "approximate_interval_pairs": 0,
+      "overlapping_interval_pairs": 0,
+      "findings": 9,
+      "findings_by_category": {
+        "long_waiting": 7,
+        "workload_imbalance": 2
+      }
+    },
+    {
+      "process": "Recruitment",
+      "cases": 100,
+      "events": 1255,
+      "activities": 21,
+      "transitions": 29,
+      "variants": 22,
+      "repeated_cases": 9,
+      "variants_with_at_least_5_cases": 5,
+      "cases_on_variants_with_at_least_5_cases": 80,
+      "largest_variant_cases": 32,
+      "case_status_counts": {
+        "completed": 92,
+        "incomplete": 4,
+        "cancelled": 4
+      },
+      "mean_case_duration_days": 21.7933125,
+      "median_case_duration_days": 22.09375,
+      "mean_wait_calendar_hours": 44.69582972582973,
+      "median_wait_calendar_hours": 22.966666666666665,
+      "measured_interval_pairs": 1155,
+      "approximate_interval_pairs": 0,
+      "overlapping_interval_pairs": 0,
+      "findings": 21,
+      "findings_by_category": {
+        "long_processing": 4,
+        "long_waiting": 14,
+        "rework_path": 2,
+        "workload_imbalance": 1
+      }
+    }
+  ],
+  "finding_count": 62,
+  "finding_categories": {
+    "workload_imbalance": 9,
+    "long_waiting": 42,
+    "long_processing": 6,
+    "repeated_activity": 1,
+    "rework_path": 2,
+    "delayed_cases": 2
+  },
+  "independently_checked_evidence_samples": {
+    "workload_imbalance": 52,
+    "long_waiting": 323,
+    "long_processing": 48,
+    "repeated_activity": 3,
+    "rework_path": 4,
+    "delayed_cases": 12
+  },
+  "recommendation_count": 62,
+  "scope": "Read-only comparison of source CSV with actual uploaded analysis; no process-engine imports or synthetic flags used."
+}

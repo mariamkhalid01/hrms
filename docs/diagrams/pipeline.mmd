@@ -1,0 +1,21 @@
+flowchart TB
+    upload["User uploads CSV through frontend"]
+    inspect["API inspects CSV and returns preview"]
+    mapping["User maps columns and timestamp settings"]
+    validation["Backend validates the event log"]
+    valid{"Blocking errors?"}
+    correct["Show issue and correction guidance"]
+    confirm["Review warnings and confirm<br/>Start observable analysis job"]
+    normalize["Recheck revision<br/>Normalize UTC times and event order"]
+    process{"Process type mapped?"}
+    mine["PM4Py discovery per partition<br/>DFG and exact variants<br/>Eligible Inductive tree and Petri net"]
+    metrics["Calculate performance and assignment metrics"]
+    findings["Detect bottlenecks and repetition<br/>Prepare finding-linked recommendations"]
+    results["Persist current JSON results<br/>Present maps, dashboards and case details"]
+    upload --> inspect --> mapping --> validation --> valid
+    inspect -->|"Rejected CSV"| upload
+    valid -->|"Yes"| correct --> mapping
+    valid -->|"No"| confirm --> normalize --> process
+    process -->|"Yes: separate uploaded labels"| mine
+    process -->|"No: one Single process"| mine
+    mine --> metrics --> findings --> results

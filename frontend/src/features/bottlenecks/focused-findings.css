@@ -1,0 +1,54 @@
+.focused-findings { gap: 18px; }
+.focused-findings .investigation-filter-panel { border-radius: 8px; }
+.focused-findings .investigation-toolbar { padding: 16px 20px; gap: 18px; }
+.focused-findings .investigation-toolbar label { min-width: 210px; gap: 6px; }
+.focused-findings .investigation-toolbar select { min-height: 38px; font-size: 13px; border-radius: 5px; }
+.focused-findings .investigation-result-count { font-size: 12px; }
+.focused-findings .investigation-extra-filters { padding: 0 20px 18px; gap: 16px; }
+.focused-findings .investigation-extra-filters select { min-height: 38px; font-size: 12px; }
+.focused-findings .investigation-results { display: block; background: #fff; border: 1px solid #dce5e9; border-radius: 8px; overflow: hidden; }
+.finding-list-heading { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 18px 20px; }
+.finding-list-heading h2 { font-size: 15px; font-weight: 650; margin: 0 0 4px; color: #294655; }
+.finding-list-heading p, .finding-list-heading > span { font-size: 12px; line-height: 1.5; color: #71858e; }
+.finding-list-heading > span { white-space: nowrap; }
+.finding-column-headings { display: grid; grid-template-columns: minmax(0,1fr) 165px 88px 112px; gap: 18px; padding: 10px 20px 10px 70px; background: #f7f9fa; border-top: 1px solid #e6ecef; color: #788991; font-size: 11px; }
+.focused-findings .finding-summary { display: grid; grid-template-columns: 32px minmax(0,1fr) 165px 88px 112px; align-items: center; gap: 18px; padding: 18px 20px; border: 0; border-top: 1px solid #e7edf0; border-radius: 0; box-shadow: none; }
+.focused-findings .finding-summary:hover { background: #fcfdfd; }
+.focused-findings .finding-symbol { width: 32px; height: 32px; border-radius: 6px; align-self: start; margin-top: 5px; }
+.focused-findings .investigation-eyebrow { gap: 9px; margin-bottom: 6px; font-size: 11px; }
+.focused-findings .investigation-eyebrow .insight-severity { font-size: 10px; padding: 2px 6px; }
+.focused-findings .finding-summary-main h3 { font-size: 14px; font-weight: 600; line-height: 1.5; letter-spacing: 0; margin: 0 0 4px; color: #294b5c; overflow-wrap: anywhere; }
+.focused-findings .finding-location { margin: 0; font-size: 12px; line-height: 1.6; color: #758994; }
+.focused-findings .finding-summary-measure { display: grid; gap: 4px; padding: 0; border: 0; grid-column: auto; text-align: left; }
+.focused-findings .finding-summary-measure > span { font-size: 10px; line-height: 1.4; color: #7d8e96; max-width: none; }
+.focused-findings .finding-summary-measure > strong { font-size: 19px; font-weight: 600; color: #936734; line-height: 1.35; }
+.focused-findings .finding-summary-measure > small { font-size: 11px; color: #7f9199; }
+.finding-case-count { display: grid; gap: 4px; }
+.finding-case-count strong { font-size: 17px; color: #345462; font-weight: 600; }
+.finding-case-count span { font-size: 10px; color: #7b8e96; }
+.finding-open { display: inline-flex; align-items: center; justify-content: flex-end; gap: 6px; min-height: 32px; border: 0; background: none; padding: 10px 0; color: #287568; font-size: 12px; font-weight: 600; white-space: nowrap; }
+.finding-open:hover { text-decoration: underline; text-underline-offset: 3px; }
+.finding-open svg { flex-shrink: 0; }
+.focused-findings > .insight-pagination { padding: 0; border: 0; background: none; font-size: 12px; }
+.focused-findings .investigation-footnote { margin: 0; font-size: 11px; }
+@container workspace (max-width: 1000px) {
+  .finding-column-headings { grid-template-columns: minmax(0,1fr) 145px 70px; padding-right: 20px; }
+  .finding-column-headings > span:last-child { display: none; }
+  .focused-findings .finding-summary { grid-template-columns: 28px minmax(0,1fr) 145px 70px; gap: 14px; }
+  .focused-findings .finding-open { grid-column: 2 / -1; justify-content: flex-start; padding: 0; }
+}
+@container workspace (max-width: 650px) {
+  .finding-column-headings { display: none; }
+  .finding-list-heading { padding: 16px; }
+  .finding-list-heading > span { display: none; }
+  .focused-findings .investigation-toolbar { flex-wrap: wrap; padding: 16px; }
+  .focused-findings .investigation-toolbar label { min-width: 0; width: 100%; }
+  .focused-findings .investigation-result-count { margin: 0; }
+  .focused-findings .finding-summary { grid-template-columns: minmax(0,1fr) 72px; gap: 12px; padding: 16px; }
+  .focused-findings .finding-symbol { display: none; }
+  .focused-findings .finding-summary-main { grid-column: 1 / -1; }
+  .focused-findings .finding-summary-measure { grid-column: 1; }
+  .focused-findings .finding-case-count { grid-column: 2; }
+  .focused-findings .finding-open { grid-column: 1 / -1; margin-top: 3px; }
+  .focused-findings .investigation-extra-filters { grid-template-columns: minmax(0,1fr); padding: 0 16px 16px; }
+}

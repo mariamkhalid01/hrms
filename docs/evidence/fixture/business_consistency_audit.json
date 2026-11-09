@@ -1,0 +1,483 @@
+{
+  "summary": {
+    "checked_at_utc": "2026-11-09T20:31:22.392830+00:00",
+    "events": 4700,
+    "cases": 500,
+    "employees": 650,
+    "candidates": 112,
+    "checks": 91,
+    "passed": 91,
+    "failures": []
+  },
+  "csv_sha256": {
+    "assignment_changes.csv": "b10139da4974032b5bd84ba9bbaf351a52b59c1b801929f845471dc212d90891",
+    "business_calendar.csv": "75ea22f0ade60f21cf2e38f958f20725fb6d08c32a074e2042c769f5a9f78532",
+    "candidates.csv": "547df03ce21741013c68bbb894145d8ca12ff7d3d311ed03de6e9e56c3bfed9c",
+    "case_attribute_changes.csv": "0d236c803a64fc5e9ae6d88f63303e9dc49bab5b2fae5f60b6bb583b29f52f5d",
+    "case_attributes.csv": "029da792bce182c22ddc5546852f6fc406a9dedd45f45706cdd736d99a444562",
+    "case_timing_changes.csv": "68e5a28629dc7f1913c7024f62dcbb07f655a330f6b3ed987cabd718d8d0c22c",
+    "departments.csv": "19ee223841b80f1157f9813804f91853ce4cf4b69614ab99bd63f22c8cf47e03",
+    "employees.csv": "34bdc137271762028f8eeccf87b346afe7a2f7f47056beb2c1bbfbbb055733e8",
+    "event_log.csv": "96a28dc8c33779d1cf530c436741019256e08b411fd097f113514abd782bdcf4",
+    "resources.csv": "7e21d5e8f908d9c31d2c9f58b237981481fed32ec028cbec8919a638437517ca",
+    "role_delegations.csv": "1d031c521b9657694c14cb39bfc76a7732ff260b4beaacaab31eae1d8eb2297c",
+    "temporal_changes.csv": "b3e5cff066009ce086768601bade47b6baf3c6e15628416c4d05c6c97012a242"
+  },
+  "checks": [
+    {
+      "check": "Required event fields",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "500 cases",
+      "passed": true,
+      "detail": "500"
+    },
+    {
+      "check": "Requested process case counts",
+      "passed": true,
+      "detail": "{'Leave Management': 150, 'Payroll': 150, 'Onboarding': 100, 'Recruitment': 100}"
+    },
+    {
+      "check": "3000 to 5000 events",
+      "passed": true,
+      "detail": "4700"
+    },
+    {
+      "check": "500 to 800 employees",
+      "passed": true,
+      "detail": "650"
+    },
+    {
+      "check": "event_log primary key",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "case_attributes primary key",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "resources primary key",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "departments primary key",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "employees primary key",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "candidates primary key",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "No duplicate event bodies",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "All cases have events",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "One process per case",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Event and case process match",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "event_log.case_id references",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "event_log.employee_id references",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "event_log.candidate_id references",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "event_log.resource_id references",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "event_log.department_id references",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "resources.department_id references",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "employees.department_id references",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "candidates.recruitment_case_id references",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Event resource role match",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "case_id present on every event",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "process_type present on every event",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "activity present on every event",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "timestamp present on every event",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "activity_start_timestamp present on every event",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "activity_end_timestamp present on every event",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "resource_id present on every event",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "resource_role present on every event",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "department_id present on every event",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "channel present on every event",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "activity_status present on every event",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "timestamp parseable",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "activity_start_timestamp parseable",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "activity_end_timestamp parseable",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Completion timestamp equality",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Nonnegative event duration",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Event order contiguous",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Completion chronology",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Start after preceding completion",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Observation dates in 2025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "No Friday or Saturday activity endpoints",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Activity endpoints in office hours",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Handoff flag equals actual resource transfer",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Case start dates agree",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Incomplete case end dates blank",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Closed case end dates agree",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Recruitment incomplete has no terminal event",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Onboarding incomplete has no terminal event",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Leave Management incomplete has no terminal event",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Payroll incomplete has no terminal event",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "IT account after employee record",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Recruitment candidate belongs to case",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Calendar has all 365 days",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Calendar and activity endpoints agree",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Actor department mapping",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Case business department mapping",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Resource employee mapping",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Resource employee department agreement",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Resource intervals do not overlap",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Processing minutes reconstructed",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Business wait minutes independently reconstructed",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Delay flag evidence",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Delay reasons match flags",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Rework reasons match flags",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Exception reasons match flags",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Delayed activity comparisons available",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Rework on recognized corrective actions or repeated activities",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Case has_delay matches event evidence",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Case has_rework matches event evidence",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Case has_exception matches event evidence",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "100 distinct onboarding employees",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Onboarding after offer acceptance",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Onboarding candidate employee matches",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Onboarding offer date matches candidate",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Onboarding valid accepted linked recruitment",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Application before accepted offer",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Candidate application date matches event",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Leave request after hire",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Leave balances conserved",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Employee annual leave balances continuous",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "144 regular monthly departmental batches",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Six adjustment batches separately scoped",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Payroll headcounts match hire dates",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Payroll roster cutoff matches collection",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Payment dates match events",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Payroll lateness flags evidence",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "All tables explicitly synthetic",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

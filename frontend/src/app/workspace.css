@@ -1,0 +1,98 @@
+/* Keep the original sidebar; the content column owns all remaining width. */
+body { font-family: "Segoe UI", Arial, sans-serif; }
+.app-shell--clear { --navigation-width: 242px; display: grid; grid-template-columns: var(--navigation-width) minmax(0, 1fr); background: #f5f7f8; font-size: 15px; color: #243d4b; }
+.app-shell--clear .workspace { grid-column: 2; width: 100%; margin-left: 0; min-width: 0; }
+.app-shell--clear .sidebar { width: var(--navigation-width); height: 100dvh; min-height: 0; overflow-y: auto; overscroll-behavior: contain; }
+.app-shell--clear .brand { padding: 28px 22px 23px; }
+.app-shell--clear .brand-product { font-size: 13px; }
+.app-shell--clear .nav-label { padding: 12px 23px; }
+.app-shell--clear .sidebar nav { display: grid; gap: 5px; padding: 0 12px; }
+.workspace-nav-link { display: flex; align-items: center; gap: 11px; min-height: 46px; padding: 12px 13px; border-radius: 6px; font-size: 13px; font-weight: 500; line-height: 1.5; color: #c3ced8; }
+.workspace-nav-link svg { flex-shrink: 0; }
+.workspace-nav-link:hover { background: #21384d; color: #fff; }
+.workspace-nav-link--active { background: #2d455b; color: #fff; box-shadow: inset 3px 0 0 #d1b779; font-weight: 600; }
+.app-shell--clear .supporting-label { margin-top: 16px; padding-left: 13px; }
+.app-shell--clear .sidebar-note { margin: 28px 22px 23px; }
+.sidebar-note > svg { flex-shrink: 0; }
+.sidebar-note > div { min-width: 0; }
+.app-shell--clear .sidebar-filename { max-width: 100%; font-size: 12px; }
+.app-shell--clear .close-dataset { font-size: 12px; min-height: 32px; }
+.app-shell--clear .topbar { height: 58px; padding: 0 24px; }
+.app-shell--clear .breadcrumb { font-size: 13px; }
+.app-shell--clear .breadcrumb strong { overflow: hidden; text-overflow: ellipsis; }
+.app-shell--clear .icon-button { width: 36px; height: 36px; border-radius: 8px; }
+.navigation-toggle { display: none; }
+.app-shell--clear .main-content { container: workspace / inline-size; max-width: none; width: 100%; min-width: 0; padding: 24px; }
+.app-shell--clear .page-heading { align-items: center; flex-wrap: wrap; margin-bottom: 20px; gap: 14px 24px; }
+.app-shell--clear .page-heading > div:first-child { flex: 1 1 380px; min-width: 0; }
+.app-shell--clear .page-heading .upload-action { flex-shrink: 0; }
+.app-shell--clear h1 { font-size: 26px; line-height: 1.25; letter-spacing: -.5px; font-weight: 650; color: #243d4b; }
+.app-shell--clear .page-heading p { font-size: 13px; color: #657a83; max-width: 770px; line-height: 1.6; margin-top: 7px; }
+.app-shell--clear .button { font-size: 13px; padding: 9px 14px; border-radius: 5px; min-height: 38px; font-weight: 600; }
+.app-shell--clear .button-primary { background: #275e54; }
+.app-shell--clear .button-primary:hover:not(:disabled) { background: #1b4d45; }
+.app-shell--clear .button-primary:disabled { background: #dbe2e8; }
+.app-shell--clear .panel { border-radius: 8px; border-color: #dfe7e9; }
+.app-shell--clear .panel-header { padding: 16px 18px; }
+.app-shell--clear .panel-header h2 { font-size: 14px; }
+.app-shell--clear .subtle-label { font-size: 12px; }
+.app-shell--clear .text-link { font-size: 14px; }
+.app-shell--clear .workspace-footer { font-size: 10px; padding-top: 18px; margin-top: 26px; }
+.app-shell--clear .insight-body { font-size: 14px; padding: 28px; }
+.app-shell--clear .insight-body h3 { font-size: 16px; }
+.app-shell--clear .insight-muted { font-size: 13px; }
+.app-shell--clear .insight-counts { padding: 26px 8px; border-radius: 12px; }
+.app-shell--clear .insight-counts span { font-size: 13px; }
+.app-shell--clear .insight-counts strong { font-size: 28px; }
+.app-shell--clear .insight-facts { gap: 26px; margin: 28px 0; }
+.app-shell--clear .insight-facts dt { font-size: 13px; }
+.app-shell--clear .insight-facts dd { font-size: 19px; }
+.app-shell--clear .insight-table th, .app-shell--clear .insight-table td { font-size: 13px; padding: 17px 20px; }
+.app-shell--clear .insight-list { font-size: 14px; line-height: 1.9; }
+.app-shell--clear .insight-row-button { padding: 24px 26px; }
+.app-shell--clear .insight-row-button strong { font-size: 15px; }
+.app-shell--clear .insight-row-meta, .app-shell--clear .insight-tag { font-size: 12px; }
+.app-shell--clear .insight-severity { font-size: 11px; padding: 4px 9px; }
+.app-shell--clear .insight-pagination { font-size: 13px; padding: 22px 24px; }
+.app-shell--clear .insight-empty, .app-shell--clear .insight-loading { font-size: 15px; padding: 48px 26px; }
+.app-shell--clear .empty-state p { font-size: 14px; }
+.app-shell--clear .empty-state h2 { font-size: 21px; }
+.navigation-overlay { position: fixed; inset: 0; z-index: 120; }
+.navigation-backdrop { position: absolute; inset: 0; background: rgb(21 40 49 / 35%); border: 0; }
+.navigation-drawer { position: absolute; inset: 0 auto 0 0; display: flex; flex-direction: column; width: min(300px, 90vw); background: #172b3d; color: #c3ced8; overflow-y: auto; overscroll-behavior: contain; box-shadow: 8px 0 40px rgb(20 36 46 / 12%); }
+.navigation-drawer-heading { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px 0; font-size: 14px; }
+.navigation-drawer-heading .icon-button { color: #c3ced8; }
+.navigation-drawer-heading .icon-button:hover { background: #2d455b; }
+.navigation-drawer nav { display: grid; gap: 6px; padding: 0 12px; }
+.navigation-drawer .workspace-nav-link { font-size: 14px; }
+@media (min-width: 1800px) {
+  .app-shell--clear .topbar { padding-left: 30px; padding-right: 30px; }
+  .app-shell--clear .main-content { padding: 26px 30px; }
+}
+@media (max-width: 1200px) {
+  .app-shell--clear { --navigation-width: 220px; }
+  .app-shell--clear .topbar { padding-left: 24px; padding-right: 24px; }
+  .app-shell--clear .main-content { padding: 24px; }
+}
+@media (max-width: 960px) {
+  .app-shell--clear { grid-template-columns: minmax(0, 1fr); }
+  .app-shell--clear .workspace { grid-column: 1; }
+  .app-shell--clear .sidebar { display: none; }
+  .navigation-toggle { display: inline-flex; }
+}
+@media (max-width: 650px) {
+  .app-shell--clear .topbar { padding: 0 14px; height: 58px; gap: 10px; }
+  .app-shell--clear .connection-control { gap: 0; }
+  .app-shell--clear .connection-control .icon-button { display: none; }
+  .app-shell--clear .connection-status { font-size: 10px; }
+  .app-shell--clear .main-content { padding: 22px 16px; }
+  .app-shell--clear .page-heading { display: block; margin-bottom: 20px; }
+  .app-shell--clear h1 { font-size: 24px; }
+  .app-shell--clear .page-heading p { font-size: 13px; }
+  .app-shell--clear .panel-header { padding: 20px; }
+  .app-shell--clear .insight-body { padding: 22px; }
+  .app-shell--clear .insight-counts > div { padding: 0 16px; }
+  .app-shell--clear .insight-counts strong { font-size: 25px; }
+  .app-shell--clear .insight-facts { grid-template-columns: 1fr; }
+  .app-shell--clear .workspace-footer span:last-child { display: none; }
+}

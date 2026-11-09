@@ -1,0 +1,18 @@
+.case-completion-settings { margin-top: 22px; }
+.case-completion-settings > summary { padding: 22px 26px; font-size: 15px; font-weight: 600; color: #315b56; cursor: pointer; }
+.case-completion-settings[open] > summary { border-bottom: 1px solid #e3e9eb; }
+.case-completion-body { padding: 24px 26px; }
+.case-completion-body > p { font-size: 14px; line-height: 1.7; color: #607682; max-width: 900px; margin-bottom: 20px; }
+.case-completion-source { max-width: 420px; }
+.case-completion-source label, .case-completion-values label { display: block; font-size: 13px; font-weight: 600; color: #365463; margin-bottom: 8px; }
+.case-completion-source select, .case-completion-values textarea { width: 100%; border: 1px solid #cbd8df; border-radius: 7px; font: inherit; font-size: 14px; color: #26434f; padding: 11px 12px; background: #fff; }
+.case-completion-values { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 22px; margin-top: 24px; }
+.case-completion-values textarea { resize: vertical; min-height: 112px; line-height: 1.6; }
+.case-completion-values p, .case-completion-note { font-size: 12px; line-height: 1.7; color: #6b818c; margin-top: 8px; }
+.case-completion-body .case-completion-note { font-size: 13px; margin-top: 20px; margin-bottom: 0; }
+.case-completion-error { margin-top: 18px; padding: 12px 14px; color: #915642; border: 1px solid #ead6cc; border-radius: 6px; background: #fff8f3; font-size: 13px; }
+.case-completion-confirm { margin: 24px 0; padding: 20px 22px; border: 1px solid #dde7e3; border-radius: 8px; background: #f5f9f7; }
+.case-completion-confirm h3 { font-size: 15px; margin-bottom: 9px; color: #355a51; }
+.case-completion-confirm p, .case-completion-confirm li { font-size: 13px; line-height: 1.7; color: #526d65; }
+.case-completion-confirm ul { padding-left: 20px; margin: 10px 0; }
+@media(max-width:700px) { .case-completion-values { grid-template-columns: 1fr; } .case-completion-body, .case-completion-settings > summary { padding: 20px; } }

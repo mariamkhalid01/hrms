@@ -1,0 +1,27 @@
+{
+  "datasetId": "cbd64c13-9b05-42e0-86d2-c0cd2fba1a12",
+  "completed": true,
+  "checks": {
+    "new_session_starts_empty": true,
+    "preview_rows_and_columns": true,
+    "real_validation_no_blocking_errors": true,
+    "confirmation_includes_explicit_case_status": true,
+    "all_actual_processing_stages_completed": true,
+    "observed_server_job_states": true,
+    "no_fabricated_progress_percentages": true,
+    "four_separate_discovered_processes": true,
+    "explorer_ready_after_normal_upload": true,
+    "Leave Management_common_path_reconciles": true,
+    "Onboarding_common_path_reconciles": true,
+    "Payroll_common_path_reconciles": true,
+    "Recruitment_common_path_reconciles": true,
+    "no_browser_errors": true
+  },
+  "passed": 14,
+  "errors": [],
+  "observed_job_states": [
+    "queued",
+    "running",
+    "completed"
+  ]
+}

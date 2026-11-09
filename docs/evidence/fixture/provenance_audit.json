@@ -1,0 +1,105 @@
+{
+  "checked_at_utc": "2026-11-09T20:29:07.596807+00:00",
+  "events": 4700,
+  "cases": 500,
+  "event_columns": 52,
+  "case_status_counts": {
+    "Completed": 469,
+    "Rejected": 14,
+    "Incomplete": 12,
+    "Cancelled": 5
+  },
+  "checks": [
+    {
+      "check": "Original source checksums preserved",
+      "passed": true
+    },
+    {
+      "check": "All staged repair checks passed",
+      "passed": true
+    },
+    {
+      "check": "Same unique events and case identities",
+      "passed": true
+    },
+    {
+      "check": "Sequences outcomes durations and exception evidence preserved",
+      "passed": true
+    },
+    {
+      "check": "Changed actor IDs exactly match audit",
+      "passed": true
+    },
+    {
+      "check": "Original actor provenance preserved",
+      "passed": true
+    },
+    {
+      "check": "Assignment audit matches old and final actors",
+      "passed": true
+    },
+    {
+      "check": "Changed timestamp IDs exactly match audit",
+      "passed": true
+    },
+    {
+      "check": "Temporal audit matches final intervals",
+      "passed": true
+    },
+    {
+      "check": "Every shifted interval stays on same local date",
+      "passed": true
+    },
+    {
+      "check": "All actor names roles and home departments use references",
+      "passed": true
+    },
+    {
+      "check": "All enriched case attributes reconcile to companion",
+      "passed": true
+    },
+    {
+      "check": "Every event remains explicitly synthetic V2",
+      "passed": true
+    },
+    {
+      "check": "All recorded activity intervals end at the event timestamp",
+      "passed": true
+    },
+    {
+      "check": "All observations are bounded by cutoff",
+      "passed": true
+    },
+    {
+      "check": "Incomplete cases keep open end and pending context",
+      "passed": true
+    },
+    {
+      "check": "Role changes have exactly one explicit delegation",
+      "passed": true
+    },
+    {
+      "check": "Delegations cover exact final event and current role",
+      "passed": true
+    },
+    {
+      "check": "No resource has overlapping assigned intervals",
+      "passed": true
+    },
+    {
+      "check": "Payroll release and approval are separate people",
+      "passed": true
+    },
+    {
+      "check": "No requester performs their own leave decision",
+      "passed": true
+    },
+    {
+      "check": "No ordinary duty assigned during approved absence",
+      "passed": true
+    }
+  ],
+  "passed": 22,
+  "failures": [],
+  "absence_conflicts": []
+}

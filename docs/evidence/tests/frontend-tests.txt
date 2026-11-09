@@ -1,0 +1,10 @@
+$ vitest run
+
+ RUN  v5.1.0 C:/Users/SG5/Documents/Codex/2026-11-09/files-pasted-by-the-user-project/frontend
+
+
+ Test Files  4 passed (4)
+      Tests  26 passed (26)
+   Start at  23:04:22
+   Duration  330ms (tests 34%, import 30%, transform 26%, worker 10%)
+

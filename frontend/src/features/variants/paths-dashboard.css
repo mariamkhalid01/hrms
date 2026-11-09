@@ -1,0 +1,69 @@
+.paths-dashboard { display: grid; gap: 18px; color: #263f4f; }
+.paths-toolbar { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 22px; padding: 18px 22px; background: #fff; border: 1px solid #dce5e9; border-radius: 9px; }
+.paths-toolbar > label { display: grid; gap: 7px; min-width: 220px; max-width: 100%; font-size: 12px; font-weight: 600; color: #617785; }
+.paths-toolbar select { height: 40px; width: 260px; max-width: 100%; border: 1px solid #cddae1; border-radius: 5px; background: #fff; color: #263f4f; padding: 8px 30px 8px 11px; font: inherit; font-size: 13px; }
+.paths-totals { display: flex; flex-wrap: wrap; gap: 16px 28px; margin: 0; }
+.paths-totals > div { padding-left: 24px; border-left: 1px solid #e6ecef; }
+.paths-totals dt { color: #6c808d; font-size: 12px; line-height: 1.5; }
+.paths-totals dd { margin: 4px 0 0; font-size: 22px; font-weight: 650; letter-spacing: -.4px; color: #284e5e; }
+.paths-comparison-panel { background: white; border: 1px solid #dce5e9; border-radius: 9px; overflow: hidden; }
+.paths-comparison-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; padding: 21px 24px; }
+.paths-comparison-heading h2 { color: #2a4759; font-size: 17px; font-weight: 650; margin: 0; }
+.paths-comparison-heading p { color: #72848e; font-size: 13px; line-height: 1.6; margin: 7px 0 0; max-width: 620px; }
+.paths-comparison-heading > span { color: #788b95; font-size: 12px; white-space: nowrap; padding-top: 3px; }
+.paths-column-headings, .path-comparison-row { display: grid; grid-template-columns: minmax(170px,1.15fr) minmax(170px,1.3fr) 65px 105px 65px 18px; column-gap: 22px; align-items: center; padding: 0 24px; }
+.paths-column-headings { min-height: 38px; color: #728692; background: #f6f8fa; border-top: 1px solid #e9eef1; border-bottom: 1px solid #e9eef1; font-size: 11px; font-weight: 600; }
+.path-comparison-row { width: 100%; min-height: 64px; padding-top: 11px; padding-bottom: 11px; text-align: left; background: #fff; border: 0; border-bottom: 1px solid #e9eef1; color: #365365; font-family: inherit; }
+.path-comparison-row:hover { background: #f5fafb; }
+.path-comparison-row:focus-visible { outline: 3px solid #4f9dba; outline-offset: -3px; }
+.path-comparison-name { display: grid; gap: 5px; min-width: 0; }
+.path-comparison-name > span { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.path-comparison-name strong { font-size: 14px; font-weight: 650; }
+.path-comparison-name > small { color: #7e8f98; font-size: 11px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; line-height: 1.5; }
+.paths-leading-label { font-size: 10px; font-weight: 600; color: #28798d; padding: 3px 6px; background: #eaf5f7; border-radius: 3px; }
+.path-comparison-share { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.path-comparison-share > strong { width: 49px; text-align: right; flex-shrink: 0; color: #386477; font-size: 12px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.paths-frequency-track { height: 17px; flex: 1; background: #eff5f7; border-radius: 2px; overflow: hidden; }
+.paths-frequency-track > span { height: 100%; display: block; min-width: 2px; background: #68b5c7; border-radius: 2px; }
+.path-comparison-row:first-of-type .paths-frequency-track > span { background: #218da7; }
+.path-comparison-number, .path-comparison-duration, .path-comparison-steps { display: flex; align-items: center; gap: 6px; font-size: 13px; min-width: 0; }
+.path-comparison-number > strong, .path-comparison-duration > strong, .path-comparison-steps > strong { font-weight: 550; font-variant-numeric: tabular-nums; }
+.path-comparison-number > small, .path-comparison-duration > small, .path-comparison-steps > small { display: none; }
+.path-comparison-steps > span { display: flex; color: #a37d36; }
+.path-comparison-open { color: #8ca2ae; }
+.paths-comparison-panel > .insight-pagination { padding: 16px 24px; border: 0; font-size: 12px; }
+.paths-comparison-panel > .insight-pagination .button { font-size: 12px; min-height: 34px; padding: 6px 12px; }
+.paths-comparison-panel .investigation-empty { border: 0; border-radius: 0; padding: 45px 20px; background: white; }
+.paths-note { display: flex; align-items: flex-start; gap: 8px; font-size: 12px; color: #7b8e98; line-height: 1.7; margin: 0; }
+.paths-note svg { flex-shrink: 0; margin-top: 3px; color: #a38b50; }
+@container workspace (max-width: 950px) {
+  .paths-column-headings, .path-comparison-row { grid-template-columns: minmax(140px,1fr) minmax(130px,1fr) 50px 90px 45px 16px; column-gap: 12px; padding-left: 20px; padding-right: 20px; }
+  .paths-totals { gap: 16px 20px; }
+  .paths-totals > div { padding-left: 16px; }
+  .paths-comparison-heading { padding: 20px; }
+}
+@container workspace (max-width: 680px) {
+  .paths-toolbar { align-items: flex-start; }
+  .paths-totals { width: 100%; justify-content: space-between; }
+  .paths-totals > div { border-left: 0; padding-left: 0; }
+  .paths-column-headings { display: none; }
+  .path-comparison-row { grid-template-columns: 1fr 1fr 20px; gap: 14px 16px; padding: 19px 20px; }
+  .path-comparison-name { grid-column: 1 / 3; grid-row: 1; }
+  .path-comparison-open { grid-column: 3; grid-row: 1; }
+  .path-comparison-share { grid-column: 1 / -1; grid-row: 2; }
+  .path-comparison-number { grid-column: 1; }
+  .path-comparison-duration { grid-column: 2 / 4; justify-content: flex-end; }
+  .path-comparison-steps { grid-column: 1 / -1; }
+  .path-comparison-number > small, .path-comparison-duration > small, .path-comparison-steps > small { display: inline; font-size: 11px; color: #7f929b; }
+  .path-comparison-steps::after { content: 'in this path'; font-size: 11px; color: #7f929b; }
+  .paths-comparison-heading { display: block; }
+  .paths-comparison-heading > span { display: block; margin-top: 10px; }
+}
+@media (max-width: 480px) {
+  .paths-toolbar { padding: 18px; }
+  .paths-toolbar > label, .paths-toolbar select { width: 100%; }
+  .paths-totals { gap: 16px; }
+  .paths-totals dt { font-size: 11px; }
+  .paths-totals dd { font-size: 20px; }
+  .paths-totals > div:last-child { flex: 1 1 100%; }
+}

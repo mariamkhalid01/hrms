@@ -1,0 +1,22 @@
+.analysis-progress { padding: 28px; }
+.analysis-progress-title { display: flex; gap: 13px; align-items: flex-start; color: #486d88; }
+.analysis-progress-title h2 { font-size: 17px; font-weight: 600; color: #2d465b; }
+.analysis-progress-title p { margin-top: 7px; font-size: 12px; line-height: 1.7; color: #657b8c; }
+.analysis-stage-list { padding: 0; margin: 24px 0 0; list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.analysis-stage { display: flex; align-items: flex-start; gap: 10px; border: 1px solid #e4e9ee; border-radius: 5px; padding: 13px; color: #8794a0; min-width: 0; }
+.analysis-stage > svg { flex-shrink: 0; margin-top: 2px; }
+.analysis-stage > div { min-width: 0; flex: 1; }
+.analysis-stage strong { font-size: 11px; font-weight: 550; display: block; line-height: 1.6; }
+.analysis-stage span { display: block; font-size: 10px; line-height: 1.6; margin-top: 3px; overflow-wrap: anywhere; }
+.analysis-stage small { text-transform: capitalize; font-size: 9px; padding-top: 2px; }
+.analysis-stage--running { border-color: #8caabd; background: #f3f7fa; color: #345d78; }
+.analysis-stage--completed { color: #44765c; background: #f6faf7; border-color: #dce9e0; }
+.analysis-stage--failed { color: #a14f43; background: #fff7f5; border-color: #ecd5ce; }
+.analysis-progress-note { font-size: 10px; line-height: 1.7; color: #7f8f9c; margin-top: 19px; }
+.analysis-error { display: flex; flex-direction: column; align-items: center; padding: 38px 25px; gap: 14px; text-align: center; color: #9c6253; }
+.analysis-error h2 { font-size: 17px; color: #3d566a; }
+.analysis-error p { font-size: 12px; line-height: 1.8; max-width: 580px; }
+.analysis-error .action-group { flex-wrap: wrap; justify-content: center; }
+.analysis-empty-upload { margin-top: 20px; }
+.analysis-status-link { color: #c4d7e3; background: transparent; border: 0; font-size: 10px; padding: 0; margin-top: 8px; text-decoration: underline; }
+@media (max-width: 650px) { .analysis-stage-list { grid-template-columns: 1fr; } .analysis-progress { padding: 21px 18px; } .analysis-stage { padding: 11px; } }
