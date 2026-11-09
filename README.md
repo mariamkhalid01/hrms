@@ -1,70 +1,52 @@
 # HR Process Mining and Improvement Platform
 
-A React and FastAPI application for analyzing uploaded HR event logs. This release implements **milestone 5: the connected frontend and interactive process visualizations**, using real PM4Py discovery, performance analytics, bottleneck findings and evidence-linked recommendations. Opening the application without an explicit dataset URL starts with an empty workspace. Data enters the application only through an explicit upload.
+The HR Process Mining and Improvement Platform helps analysts understand how work moves through HR processes. Upload an event log, map its columns, validate the data, and explore evidence-based process insights in one workspace.
 
-The [technical documentation](docs/README.md) provides the system requirements, architecture, processing pipeline, data model, API reference, testing evidence and installation guide. Its research findings concern synthetic development data, not the university's actual HR operations.
+The platform uses a React and TypeScript frontend, a FastAPI backend, Pandas for data preparation, and PM4Py for process discovery. Analysis is performed by the backend from the uploaded dataset. The application does not load sample data or display invented metrics when no dataset has been uploaded.
 
-The five application areas are Overview, Process Explorer, Bottleneck Analysis, Process paths (variants), and Recommendations, with a supporting Case Explorer. The upload workflow is **Upload → Preview → Map Columns → Validate → Confirm → Process**. Confirmation starts a backend job that prepares the data, discovers separate process models, calculates analytics and prepares recommendations. All screens display the resulting backend data. No sample process maps, invented KPIs or default datasets are displayed.
+## What you can do
 
-The interface uses full-width pages, readable step diagrams and details on demand. Process Explorer starts with the most common actual case sequence, including its coverage, and offers all recorded paths. Its BPMN-inspired task boxes and observed boundary markers are visual aids rather than a formal BPMN model. Case timelines, finding evidence, path details and recommendation plans open in focused, keyboard-accessible dialogs. Process paths explains variants as cases following the same ordered steps, so analysts can compare common routes, repetitions and observed durations without needing process-mining terminology first.
+1. Upload a CSV event log.
+2. Preview the file and map Case ID, Activity, Timestamp, and optional fields.
+3. Validate timestamps, identifiers, required fields, and data quality.
+4. Process the confirmed dataset and wait for the analysis job to finish.
+5. Review the results in Overview, Process Explorer, Bottleneck Analysis, Process Paths, Recommendations, and Case Explorer.
 
-## Application areas
+The application areas are:
 
-| Route | Available features |
+| Area | Purpose |
 | --- | --- |
-| `/overview` | Actual case/event/process counts, pooled average and median observed case duration, process comparisons and priority findings |
-| `/process-explorer` | React Flow maps with Frequency, Performance and Rework modes, process selection, node/edge inspection, zoom, pan and fit-to-screen |
-| `/bottlenecks` | Findings filtered by process, severity, category and activity/transition, with thresholds, affected cases and source evidence |
-| `/variants` | Actual activity sequences, case frequencies, percentages, duration comparisons and links to matching cases |
-| `/recommendations` | Evidence-linked review actions, measurement plans and caveats; causes and expected improvements are not invented |
-| `/cases` | Case search and process/variant filtering, paginated event timelines, UTC timestamps, assignments and original attributes |
-| `/upload` | Drag-and-drop or browse upload, preview, editable mapping, validation, confirmation and real job stages |
+| Overview | Review actual case, event, and process counts and priority findings |
+| Process Explorer | Inspect process maps in Frequency, Performance, and Rework modes |
+| Bottleneck Analysis | Investigate delays, repetition, affected cases, and supporting evidence |
+| Process Paths | Compare the activity sequences followed by real cases |
+| Recommendations | Review evidence-linked actions and measurement plans |
+| Case Explorer | Follow an individual case through its event timeline |
+| Upload | Upload, preview, map, validate, and process a dataset |
 
-Upload is available throughout the application. Navigation preserves the selected dataset using `?dataset=<dataset UUID>`. Refreshing or opening that explicit URL restores the selection; opening a fresh URL without this parameter selects no previous upload or test fixture. See [the frontend workflow guide](backend/docs/frontend-workflow.md) for the API flow, result semantics and local worker limits.
+For the complete architecture, API contracts, processing rules, and testing evidence, see the [technical documentation](docs/README.md). The documentation and bundled fixtures use synthetic development data and must not be interpreted as findings about actual university HR operations.
 
 ## Requirements
 
-- Node.js 24 LTS and pnpm 11.25.0.
-- Python 3.12, 3.13, or 3.14. Python 3.12 is the baseline development version.
-- Two terminal windows: one for each application.
+- Python 3.12, 3.13, or 3.14
+- Node.js 24 LTS and pnpm 11.25.0
+- Two terminal windows: one for the backend and one for the frontend
 
-Install pnpm if it is not available:
+Install pnpm if it is not already available:
 
-```text
+```bash
 npm install --global pnpm@11.25.0
 ```
 
-The frontend lockfile fixes the resolved JavaScript dependency tree. Backend direct dependencies are pinned in `backend/pyproject.toml`, with the tested transitive package versions recorded in `backend/requirements.lock.txt`. Install backend packages in the project virtual environment rather than a shared Python installation.
+The frontend lockfile fixes the JavaScript dependency tree. Backend direct dependencies are defined in `backend/pyproject.toml`, and tested transitive versions are recorded in `backend/requirements.lock.txt`.
 
-## Run locally on Windows
+## Run locally
 
-Run these commands from the project root in PowerShell. Using the virtual environment's Python directly avoids changing PowerShell's script-execution policy.
+Follow these steps from the project root. Complete the one-time setup in both terminals, then leave each server running.
 
-Backend terminal:
+### 1. Start the backend
 
-```powershell
-cd backend
-py -3.12 -m venv .venv
-Copy-Item .env.example .env
-.\.venv\Scripts\python.exe -m pip install -r requirements.lock.txt
-.\.venv\Scripts\python.exe -m pip install -e ".[dev]"
-.\.venv\Scripts\python.exe -m uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
-```
-
-Frontend terminal:
-
-```powershell
-cd frontend
-Copy-Item .env.example .env
-pnpm install --frozen-lockfile
-pnpm dev
-```
-
-Use the copy commands only for first-time setup; keep any existing local configuration when restarting.
-
-## Run locally on macOS or Linux
-
-Backend terminal, from the project root:
+macOS or Linux:
 
 ```bash
 cd backend
@@ -75,7 +57,22 @@ cp .env.example .env
 .venv/bin/python -m uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
 ```
 
-Frontend terminal, from the project root:
+Windows PowerShell:
+
+```powershell
+cd backend
+py -3.12 -m venv .venv
+Copy-Item .env.example .env
+.\.venv\Scripts\python.exe -m pip install -r requirements.lock.txt
+.\.venv\Scripts\python.exe -m pip install -e ".[dev]"
+.\.venv\Scripts\python.exe -m uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
+```
+
+### 2. Start the frontend
+
+Open a second terminal at the project root.
+
+macOS or Linux:
 
 ```bash
 cd frontend
@@ -84,7 +81,38 @@ pnpm install --frozen-lockfile
 pnpm dev
 ```
 
-Open [the application](http://127.0.0.1:5173), [the API health endpoint](http://127.0.0.1:8000/api/v1/health), or [the interactive API documentation](http://127.0.0.1:8000/api/docs). Stop each development server with Ctrl+C in its terminal. The OpenAPI schema is available at `/api/openapi.json`.
+Windows PowerShell:
+
+```powershell
+cd frontend
+Copy-Item .env.example .env
+pnpm install --frozen-lockfile
+pnpm dev
+```
+
+### 3. Open the application
+
+- Application: [http://127.0.0.1:5173](http://127.0.0.1:5173)
+- API health check: [http://127.0.0.1:8000/api/v1/health](http://127.0.0.1:8000/api/v1/health)
+- Interactive API documentation: [http://127.0.0.1:8000/api/docs](http://127.0.0.1:8000/api/docs)
+
+The frontend development server proxies `/api` requests to the backend. If the health check is unavailable, confirm that the backend terminal is still running. Stop either server with Ctrl+C.
+
+Use the copy commands only during first-time setup. Keep existing `.env` files when restarting so that local configuration is not overwritten.
+
+## Application routes
+
+| Route | Available features |
+| --- | --- |
+| `/overview` | Actual case, event, and process counts; duration summaries; comparisons; priority findings |
+| `/process-explorer` | Interactive process maps with process selection and node or edge inspection |
+| `/bottlenecks` | Findings filtered by process, severity, category, activity, or transition |
+| `/variants` | Activity sequences, frequencies, percentages, duration comparisons, and matching cases |
+| `/recommendations` | Evidence-linked review actions, measurement plans, and caveats |
+| `/cases` | Case search, process and variant filters, paginated timelines, and original attributes |
+| `/upload` | Dataset upload, preview, mapping, validation, confirmation, and processing stages |
+
+Navigation preserves the selected dataset with `?dataset=<dataset UUID>`. Opening a fresh URL without this parameter starts with an empty workspace. See the [frontend workflow guide](backend/docs/frontend-workflow.md) for the API flow, result semantics, and local worker limits.
 
 ## Configuration and communication
 
